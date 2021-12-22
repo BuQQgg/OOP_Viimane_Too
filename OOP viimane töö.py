@@ -3,6 +3,7 @@ Mäng
 22/12/2021
 Kevin Kiisk ja Merle Luht
 '''
+
 class Karakter:
  
     def __init__(self,nimi,elud,tugevus):
@@ -47,9 +48,14 @@ print(tegelane1.elud, vaenlane1.elud)
 
 from easygui import *
 
-while True:
+nimi = enterbox("Tere kuidas on teie nimi?")
+if nimi == None:
+    msgbox("Palun sisesta korrektne nimi!!")
+else:
+    msgbox("Tere, " + nimi +"! " + "Olete sattunud labürinti. Teil on 100 elu, kui satute kokku vaenlastega kaotad 50 elu aga kui teed õiged valikud jõuad õnnelikult lõppu.")
 
-    
+while True:
+ 
     valikud = ["Üles","Alla","Paremale","Vasakule"]
     valikud1 = ["Üles","Alla","Paremale","Vasakule"]
     mangijaValik = buttonbox("Tee valik, kuhu soovid liikuda:", choices = valikud)
@@ -114,4 +120,4 @@ while True:
         msgbox("Oled edukalt jõudnud labürindi lõppu, palju õnne!")
     kordus = enterbox("Uus mäng? (y/n): ")
     if kordus.lower() != "y":
-        break    
+        break
